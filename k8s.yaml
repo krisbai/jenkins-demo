@@ -12,8 +12,8 @@ spec:
       labels:
         app: jenkins-demo
     spec:
-      containers:
       serviceAccountName: jenkins2
+      containers:
       - image: krisbai1991/jenkins-demo:<BUILD_TAG>
         imagePullPolicy: IfNotPresent
         name: jenkins-demo
