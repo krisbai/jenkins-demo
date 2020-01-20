@@ -2,15 +2,20 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: jenkins-demo
+  labels:
+    app: jenkins-demo
 spec:
+  replicas: 1
+  selector:
+      matchLabels:
+        app: jenkins-demo
   template:
     metadata:
       labels:
-        app: jenkins-demo
+        app: nginx
     spec:
       containers:
       - image: krisbai1991/jenkins-demo:<BUILD_TAG>
-        imagePullPolicy: IfNotPresent
         name: jenkins-demo
         env:
         - name: branch
