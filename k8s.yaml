@@ -12,7 +12,7 @@ spec:
   template:
     metadata:
       labels:
-        app: nginx
+        app: jenkins-demo
     spec:
       containers:
       - image: krisbai1991/jenkins-demo:<BUILD_TAG>
